@@ -1,38 +1,52 @@
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   box-sizing: border-box;
   font-family: 'Avenier';
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://i.pinimg.com/736x/24/fa/5e/24fa5e37f6b3ba41178d1cf0d69d93f5.jpg');
+  /* background-image: linear-gradient(to bottom right, black, white); */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.app {
+  width: 100%;
+  height: 100vh;
+  margin: 0% 12%;
+  /* display: grid; */
+  /* grid-template: 10% 90% / 10% 90%; */
+  /* align-items: baseline; */
 }
 
-.app {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template: 10% 90% / 10% 90%;
-  align-items: baseline;
-}
 /* 
 main {
   height: 90vh;
   width: 100vw;
-} */
+}
 
 /* food cards */
 .card-wrapper {
   margin: 4rem 0rem;
   overflow: hidden;
+  width: 80vw;
+  margin: 0% 5%;
+}
+.card-wrapper img {
+  width: 400px;
 }
 .card-content {
   object-fit: contain;
   display: flex;
   flex-direction: column;
   width: 250px;
+  flex-wrap: wrap;
 }
 
 .card-content img {
@@ -75,10 +89,13 @@ main {
 
 .search-results {
   padding: 2em 0;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fill, 320px);
   grid-gap: 1em;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0% 7%;
+  /* width: 100vw; */
 }
 
 .search-results img {
@@ -105,6 +122,15 @@ main {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  width: 75%;
+  font-weight: 600;
+  text-align: center;
+}
+.create-recipe-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
 }
 .recipe-wrap img {
   height: 300px;
@@ -113,6 +139,9 @@ main {
   border-width: 1px;
   border-color: white;
   border-radius: 15px;
+}
+.recipe-wrap p {
+  width: 50%;
 }
 .recipe-detail h3 {
   margin-bottom: 2rem;
@@ -147,7 +176,7 @@ main {
 }
 
 .summary-wrap {
-  width: 50%;
+  width: 100%;
   padding-top: 30px;
 }
 
@@ -250,11 +279,11 @@ main {
   margin-bottom: 20px;
 }
 
-.recipe-grid {
+/* .recipe-grid {
   display: flex;
-  /* width: 100%; */
-  /* flex-wrap: wrap; */
-}
+  width: 100%;
+  flex-wrap: wrap;
+} */
 
 .recipe-field-label {
   font-family: 'Avenir';

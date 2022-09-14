@@ -40,6 +40,10 @@ const EditRecipe = ({
     setIngredient(initialValue)
   }
 
+  // const deleteIngredient = (index) => {
+  //   editForm.ingredients.pop(index)
+  // }
+
   useEffect(() => {
     getRecipes()
     if (recipe) {
@@ -56,8 +60,6 @@ const EditRecipe = ({
     }
   }, [])
 
-  // const spliceIngredient = editForm.ingredients.splice(-1, 1)
-
   const handleChange = (e) => {
     setEditForm({ ...editForm, [e.target.name]: e.target.value })
   }
@@ -68,7 +70,7 @@ const EditRecipe = ({
   }
 
   return (
-    <div>
+    <div className="create-recipe-wrap">
       <h1 className="page-title">Edit Recipe</h1>
       <form className="recipe-form" onSubmit={(e) => handleSubmit(e)}>
         <label className="recipe-field-label">Recipe Name</label>
@@ -150,6 +152,7 @@ const EditRecipe = ({
             {editForm.ingredients?.map((ingredient) => (
               <div key={ingredient.id}>
                 <p className="ingredient-text">{ingredient}</p>
+                {/* <div onClick={() => deleteIngredient(index)}>X</div> */}
               </div>
             ))}
           </div>

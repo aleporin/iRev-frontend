@@ -69,9 +69,7 @@ const RecipeDetails = ({
             </button>
           </div>
           {active === 'details' && (
-            <div className="summary-wrap">
-              <p dangerouslySetInnerHTML={{ __html: recipe.summary }}></p>
-            </div>
+            <p dangerouslySetInnerHTML={{ __html: recipe.summary }}></p>
           )}
           {active === 'ingredients' && (
             <ul>
