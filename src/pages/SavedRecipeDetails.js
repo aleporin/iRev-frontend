@@ -62,9 +62,7 @@ const SavedRecipeDetails = ({
         </button>
       </div>
       {active === 'details' && (
-        <div className="summary-wrap">
-          <p dangerouslySetInnerHTML={{ __html: unBookmarked.summary }}></p>
-        </div>
+        <p dangerouslySetInnerHTML={{ __html: unBookmarked.summary }}></p>
       )}
       {active === 'ingredients' && (
         <ul>

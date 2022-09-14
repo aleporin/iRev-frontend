@@ -8,7 +8,7 @@ import SearchResults from './pages/SearchResults'
 import Home from './pages/Home'
 import RecipeDetails from './pages/RecipeDetails'
 import MyRecipeDetails from './pages/MyRecipeDetails'
-import Nav from './components/Nav'
+// import Nav from './components/Nav'
 import { SignUpUser } from './services/Auth'
 import { DeleteRecipe } from './services/RecipeServices'
 import { UpdateRecipe } from './services/RecipeServices'
@@ -26,6 +26,7 @@ import UserRecipe from './pages/UserRecipe'
 import SavedRecipes from './pages/SavedRecipes'
 import SavedRecipeDetails from './pages/SavedRecipeDetails'
 import EditRecipe from './components/EditRecipe'
+import NavBar from './components/NavBar'
 
 function App() {
   let navigate = useNavigate()
@@ -197,11 +198,11 @@ function App() {
 
   return (
     <div>
-      {/* <Nav /> */}
+      <NavBar user={user} logOut={logOut} authenticated={authenticated} />
+      {/* <img src="https://i.imgur.com/emU62vZ.png" /> */}
+      <Search authenticated={authenticated} user={user} logOut={logOut} />
+      {/* <Sidebar logOut={logOut} authenticated={authenticated} user={user} /> */}
       <div className="app">
-        <img src="https://i.imgur.com/emU62vZ.png" />
-        <Search authenticated={authenticated} user={user} logOut={logOut} />
-        <Sidebar logOut={logOut} authenticated={authenticated} user={user} />
         <Routes>
           <Route
             path="/login"

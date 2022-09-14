@@ -61,11 +61,7 @@ const MyRecipeDetails = ({ deleteUserRecipe }) => {
             Recipe
           </button>
         </div>
-        {active === 'details' && (
-          <div className="summary-wrap">
-            <p> {recipe.desc}</p>
-          </div>
-        )}
+        {active === 'details' && <p> {recipe.desc}</p>}
         {active === 'ingredients' && (
           <ul>
             {recipe?.ingredients.map((ingredient) => (
