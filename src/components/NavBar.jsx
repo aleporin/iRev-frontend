@@ -125,7 +125,7 @@ export default function Navbar({ user, logOut, authenticated }) {
             <ul className="nav-menu-items" onClick={showSidebar}>
               <li className="navbar-toggle">
                 <Link to="#" className="menu-bars">
-                  <FaCocktail />
+                  <GiSandwich />
                 </Link>
               </li>
               {notAuthData.map((item, index) => {
