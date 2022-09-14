@@ -5,18 +5,21 @@ import { Link } from 'react-router-dom'
 const Register = () => {
   let navigate = useNavigate()
 
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const [formValues, setFormValues] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  })
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
 
-  const handleSubmit = async (error) => {
-    error.preventDefault()
-    const formData = new FormData()
-    formData.append('username', username)
-    formData.append('email', email)
-    formData.append('password', password)
-    await SignUpUser(formData)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(formValues)
+    const payload = await SignUpUser(formValues)
+    setFormValues({ username: '', email: '', password: '' })
     navigate('/login')
   }
   return (
@@ -28,42 +31,42 @@ const Register = () => {
             <div className="form-wrap">
               <label htmlFor="username">Username</label>
               <input
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={handleChange}
                 name="username"
                 type="text"
                 placeholder="username"
-                value={username}
+                value={formValues.username}
                 required
               />
             </div>
             <div className="form-wrap">
               <label htmlFor="email">Email Address</label>
               <input
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleChange}
                 name="email"
                 type="email"
                 placeholder="myemail@email.com"
-                value={email}
+                value={formValues.email}
                 required
               />
             </div>
             <div className="form-wrap">
               <label htmlFor="password">Password</label>
               <input
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handleChange}
                 name="password"
                 type="password"
-                value={password}
+                value={formValues.password}
                 required
               />
             </div>
             <div className="form-wrap">
               <label htmlFor="confirmPassword">Confirm Password</label>
               <input
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                onChange={handleChange}
                 name="confirmPassword"
                 type="password"
-                value={confirmPassword}
+                value={formValues.confirmPassword}
                 required
               />
             </div>
