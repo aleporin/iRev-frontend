@@ -79,14 +79,18 @@ export default function Navbar({ user, logOut, authenticated }) {
         <IconContext.Provider value={{ color: '#FFF' }}>
           <div className="navbar">
             <Link to="#" className="menu-bars">
-              <GiSandwich onClick={showSidebar} />
+              <img
+                src="https://i.imgur.com/aJRBbj4.png"
+                onClick={showSidebar}
+                id="nav-logo"
+              />
             </Link>
           </div>
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className="nav-menu-items" onClick={showSidebar}>
               <li className="navbar-toggle">
                 <Link to="#" className="menu-bars">
-                  <FaCocktail />
+                  <GiSandwich />
                 </Link>
               </li>
               {SidebarData.map((item, index) => {
@@ -110,7 +114,11 @@ export default function Navbar({ user, logOut, authenticated }) {
           {/* All the icons now are white */}
           <div className="navbar">
             <Link to="#" className="menu-bars">
-              <GiSandwich onClick={showSidebar} />
+              <img
+                src="https://i.imgur.com/aJRBbj4.png"
+                onClick={showSidebar}
+                id="nav-logo"
+              />
             </Link>
           </div>
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
