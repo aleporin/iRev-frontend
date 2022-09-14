@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 import { IconContext } from 'react-icons'
-import { FaSearch, FaBookmark, FaRegBookmark } from 'react-icons/fa'
+import { FaSearch, FaBookmark, FaRegBookmark, FaCocktail } from 'react-icons/fa'
+import { GiSandwich } from 'react-icons/gi'
 import { IoIosCreate } from 'react-icons/io'
 import { BiLogOut, BiLogIn } from 'react-icons/bi'
 import { SiCodechef } from 'react-icons/si'
@@ -15,35 +16,41 @@ export default function Navbar({ user, logOut, authenticated }) {
 
   const showSidebar = () => setSidebar(!sidebar)
 
+  let none
+
   const SidebarData = [
     {
       title: 'Home',
       path: '/',
       icon: <AiIcons.AiFillHome />,
-      cName: 'nav-text'
+      cName: 'nav-text',
+      onClick: false
     },
     {
       title: 'Bookmarks',
       path: `/savedrecipes/${user.id}`,
       icon: <FaBookmark />,
-      cName: 'nav-text'
+      cName: 'nav-text',
+      onClick: false
     },
     {
       title: 'My Recipes',
       path: `/recipe/${user.id}`,
       icon: <SiCodechef />,
-      cName: 'nav-text'
+      cName: 'nav-text',
+      onClick: false
     },
     {
       title: 'Create Recipe',
       path: `/create/${user.id}`,
       icon: <IoIosCreate />,
-      cName: 'nav-text'
+      cName: 'nav-text',
+      onClick: false
     },
     {
       title: 'Logout',
       path: '/',
-      onClick: { logOut },
+      onClick: true,
       icon: <BiLogOut />,
 
       cName: 'nav-text'
@@ -72,20 +79,20 @@ export default function Navbar({ user, logOut, authenticated }) {
         <IconContext.Provider value={{ color: '#FFF' }}>
           <div className="navbar">
             <Link to="#" className="menu-bars">
-              <FaIcons.FaBars onClick={showSidebar} />
+              <GiSandwich onClick={showSidebar} />
             </Link>
           </div>
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className="nav-menu-items" onClick={showSidebar}>
               <li className="navbar-toggle">
                 <Link to="#" className="menu-bars">
-                  <AiIcons.AiOutlineClose />
+                  <FaCocktail />
                 </Link>
               </li>
               {SidebarData.map((item, index) => {
                 return (
                   <li key={index} className={item.cName}>
-                    <Link to={item.path}>
+                    <Link to={item.path} onClick={() => logOut(item.onClick)}>
                       {item.icon}
                       <span>{item.title}</span>
                     </Link>
@@ -103,14 +110,14 @@ export default function Navbar({ user, logOut, authenticated }) {
           {/* All the icons now are white */}
           <div className="navbar">
             <Link to="#" className="menu-bars">
-              <FaIcons.FaBars onClick={showSidebar} />
+              <GiSandwich onClick={showSidebar} />
             </Link>
           </div>
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className="nav-menu-items" onClick={showSidebar}>
               <li className="navbar-toggle">
                 <Link to="#" className="menu-bars">
-                  <AiIcons.AiOutlineClose />
+                  <FaCocktail />
                 </Link>
               </li>
               {notAuthData.map((item, index) => {

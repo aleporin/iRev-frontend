@@ -10,21 +10,24 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: url('https://i.pinimg.com/736x/24/fa/5e/24fa5e37f6b3ba41178d1cf0d69d93f5.jpg');
+  background-image: url('https://www.foodwise.com.au/wp-content/themes/foodwise/images/bg-6.jpg');
   /* background-image: linear-gradient(to bottom right, black, white); */
 
   background-repeat: no-repeat;
   background-size: cover;
 }
 .app {
-  width: 100%;
-  height: 100vh;
   margin: 0% 12%;
   /* display: grid; */
   /* grid-template: 10% 90% / 10% 90%; */
   /* align-items: baseline; */
 }
 
+.display-flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 /* 
 main {
   height: 90vh;
@@ -35,7 +38,7 @@ main {
 .card-wrapper {
   margin: 4rem 0rem;
   overflow: hidden;
-  width: 80vw;
+  width: 60vw;
   margin: 0% 5%;
 }
 .card-wrapper img {
@@ -73,6 +76,7 @@ main {
   position: relative;
   display: flex;
   justify-content: center;
+  z-index: 0;
 }
 
 .search-form input {
@@ -122,7 +126,6 @@ main {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  width: 75%;
   font-weight: 600;
   text-align: center;
 }
@@ -130,7 +133,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 75%;
 }
 .recipe-wrap img {
   height: 300px;
@@ -183,10 +185,14 @@ main {
 /*  login/register forms */
 
 .pagewrap {
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;
+}
+.pagewrap h1 {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .container {
@@ -234,6 +240,10 @@ main {
   padding-left: 8px;
   font-family: 'Avenir';
   font-size: 14px;
+}
+
+#nav-logo {
+  width: 5vw;
 }
 
 .home-title {
@@ -370,5 +380,9 @@ main {
 .sign-up-wrap {
   width: 100vw;
   height: 100vh;
+  display: flex;
+}
+
+.delete-edit-icon {
   display: flex;
 }

@@ -34,10 +34,14 @@ function App() {
   // user auth
   const [authenticated, setAuthenticated] = useState(false)
   const [user, setUser] = useState({})
-  const logOut = () => {
-    setUser(null)
-    setAuthenticated(false)
-    localStorage.clear()
+
+  const logOut = (onClick) => {
+    if (onClick) {
+      setUser(null)
+      setAuthenticated(false)
+      localStorage.clear()
+      window.location.reload()
+    }
   }
 
   const checkStatus = async () => {
@@ -197,7 +201,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="display-flex">
       <NavBar user={user} logOut={logOut} authenticated={authenticated} />
       {/* <img src="https://i.imgur.com/emU62vZ.png" /> */}
       <Search authenticated={authenticated} user={user} logOut={logOut} />

@@ -41,7 +41,7 @@ const EditRecipe = ({
   }
 
   // const deleteIngredient = (index) => {
-  //   editForm.ingredients.pop(index)
+  //   editForm.ingredients.splice(index, 1)
   // }
 
   useEffect(() => {
